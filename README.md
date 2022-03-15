@@ -1,6 +1,6 @@
 # Tekton Pipelun Cleaner
 
-A simply bash script running in an Alpine docker, to clean up completed pipeline runs, keeping up to `NUM_TO_KEEP` instances for each Pipeline.
+A simply bash script running in an Alpine docker to clean up completed pipeline runs, keeping up to `NUM_TO_KEEP` instances for each Pipeline.
 
 ```bash
 ...
@@ -23,7 +23,7 @@ A simply bash script running in an Alpine docker, to clean up completed pipeline
       done < <(kubectl get pipelinerun -o go-template='{{range .items}}{{index .metadata.labels "tekton.dev/pipeline"}}{{"\n"}}{{end}}' | uniq);
 ```
 
-## Deplyment
+## Deployment
 
 ```bash
 # rbac
